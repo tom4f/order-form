@@ -1,0 +1,21 @@
+* {
+	/* why this must be disabled?
+	Othervise FontAwesone icons have whong size... */
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+	font-family : Verdana, Helvetica, sans-serif;
+	line-height: 1.6;
+	background-image: url("../images/background.gif");
+}
+
+.top_container {
+	background: black;
+	margin: auto;
+	width: 100%;
+	max-width: 724px;
+}

@@ -1,0 +1,29 @@
+.header{
+	background : #555555;
+	text-align : center;
+	padding: 2px;
+	color: white;
+	font-size: 14px;
+    font-weight: bold;
+}
+
+.header a { 
+	color : White;
+	text-decoration : none;
+}
+
+.header a:hover {
+	color : Lime;
+	text-decoration : none;
+}
+
+.mainpictures{
+	text-align : center;
+	width: 100%;
+	max-width: 724px;
+}
+.mainpictures img{
+    vertical-align: top;
+	width: 100%;
+	max-width: 724px;
+}

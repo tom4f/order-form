@@ -1,0 +1,79 @@
+.booking_status{
+	margin: auto;
+	justify-content: center;
+	text-align: center;
+	margin: 0;
+	width: auto;
+	background: url("./../images/booking_form_low_quality.jpg");
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: top;
+	padding: 1rem;
+	border: 1px solid black;
+	position: relative;
+}
+
+.form_result_alert{
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	top: 50px;
+	color: black;
+	border: 1px solid white;
+	border-radius: 5px;
+	text-align: center;
+	display: none;
+	text-decoration: none;
+}
+
+.form_result_alert ul {
+	list-style: none;
+}
+
+.booking_info{
+	background-color:rgba(255, 208,   0, 0.9);
+	margin-top: 2rem;
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid black;
+	color: black;
+	font-size: 13px;
+}
+
+/*<table class="booking_table">*/
+.booking_table{
+	width: 100%;
+	border-radius: 5px;
+	border-collapse: collapse;
+	padding: 0px;
+	margin: auto;
+	/* all <td> same width */
+	table-layout:fixed;
+	background-color:rgba(85, 85, 85, 0.5);
+	border: 1px solid black;
+}
+
+.booking_table td{
+	background-color:rgba(85, 85, 85, 0.1);
+	color: black;
+	border: 1px solid black;
+}
+
+.booking_table td:nth-child(1) {
+	background-color:rgba(85, 85, 85, 0.7);
+}
+
+.booking_table th{
+	font-size: 13px;
+	background-color:rgba(85, 85, 85, 0.9);
+	border: 1px solid black;
+}
+
+.booking_table tr{
+	font-size: 11px;
+}
+.booking_table tr:hover{
+	background-color:rgba(85, 85, 85, 0.7);
+	/*font-weight: bold;*/
+}
