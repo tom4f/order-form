@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { formResultAlert } from './formResultAlert'
+import { apiPath } from '../../config/apiPath';
 import './css/formular.css'
 
 export const Form = () => {
@@ -33,7 +34,7 @@ export const Form = () => {
             e.preventDefault()
 
             let xhr = new XMLHttpRequest();
-            xhr.open('POST', `http://localhost/lipnonet/rekreace/api/ajax_form_booking.php`, true);
+            xhr.open('POST', `${apiPath}/ajax_form_booking.php`, true);
             xhr.setRequestHeader('Content-type', 'application/json');
             xhr.onload = function(){
                 if (this.readyState === 4 && this.status === 200) {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { apiPath } from '../../config/apiPath';
 import './css/status.css'
 
 export const Status = () => {
@@ -6,10 +7,11 @@ export const Status = () => {
     type ArrOfObjType = { [key: string]: string }[] | null
 
     const [ formResult, setFormResult ] = useState<ArrOfObjType>(null)
+    const [ lastUpdate, setLastUpdate ] = useState( '' ) 
 
     const loadBooking = () => {
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', `http://localhost/lipnonet/rekreace/api/pdo_read_booking.php`, true);
+        xhr.open('POST', `${apiPath}/pdo_read_booking.php`, true);
         xhr.setRequestHeader('Content-type', 'application/json');
         xhr.onload = () => {
             if (xhr.readyState === 4 && xhr.status === 200) {
@@ -20,6 +22,17 @@ export const Status = () => {
         }
         xhr.onerror = () => console.log("** An error occurred during the transaction");
         xhr.send();
+    }
+
+    // get last booking modification stored in file 'formular_counter.dat'
+    const getLastBookingUpdate = (fileName:string) => {
+        fetch(fileName)
+            .then( (res)  => res.text() )
+                .then( (lastBookingUpdate) => {
+                    setLastUpdate( lastBookingUpdate )
+                })
+            // to handle errors :
+            .catch( (error) => console.log(error) )
     }
 
     const firstWeekStart = (week = 0) => {
@@ -95,7 +108,10 @@ export const Status = () => {
     }
 
 
-    useEffect( loadBooking, [] )
+    useEffect( () => {
+        loadBooking()
+        getLastBookingUpdate('./../formular_counter.dat')
+    }, [] )
 
 
     return (
@@ -119,7 +135,7 @@ export const Status = () => {
                 </table>
 
                 <div className="booking_info">
-                    Poslední změna : { actualWeek() }
+                    Poslední změna : { lastUpdate }
                     <span id="last_booking_update"></span>
                     <br />Pro zamluvení termínu použijte
                         <a href="formular.php#1">závaznou objednávku</a>] nebo
