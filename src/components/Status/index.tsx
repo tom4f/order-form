@@ -6,19 +6,24 @@ import './css/status.css'
 export const Status = () => {
     type ArrOfObjType = { [key: string]: string }[] | null
     const [ formResult, setFormResult ] = useState<ArrOfObjType>(null)
-    const [ lastUpdate, setLastUpdate ] = useState( '' ) 
+    const [ lastUpdate, setLastUpdate ] = useState<string | null>( null ) 
 
     const fetchRequests = async () => {
-        const fetchList:Promise<any>[] = [
-            fetch(`${apiPath}/pdo_read_booking.php`).then( response => response.json() ),
-            fetch('./../formular_counter.dat').then( response => response.text() )
-        ]
-        const fetchResults:any = await Promise.allSettled( fetchList )
-        let [ { value:json }, { value:text } ] = fetchResults
+        const fetchResult:any = await fetch(`${apiPath}/pdo_read_booking.php`).then( response => response.json() )
 
-        setFormResult( Array.isArray(json) ? json : null )
-        setLastUpdate( text.length === 10  ? text : ''   )
+        if (Array.isArray(fetchResult)) {  
+
+            const lastUpdateLong = fetchResult.reduce( (total, {lastUpdate:currentLastUpdate}) => {
+                return total.localeCompare(currentLastUpdate) > 0 ? total : currentLastUpdate
+            }, '0000-01-01 00:00:00' )
+
+            const lastUpdateShort = lastUpdateLong.slice(0,10).split('-').reverse().join('.')
+
+            setLastUpdate(lastUpdateShort)
+            setFormResult(fetchResult)
+        }
     }
+
     useEffect( () => { fetchRequests() }, [] )
 
     return (
