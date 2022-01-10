@@ -45,6 +45,7 @@ export const Status = () => {
                         [<a href="garsonka.php#1">CENÍK</a>]
                     <br />Žluté a zelené plochy odpovídají již obsazeným termínům (týdnům).
                     <br />Šedé plochy odpovídají částečně obsazeným týdnům.
+                    <br />Červené termíny = mimo provoz.
                     <br />Ostatní termíny jsou stále volné.
                     <br />Ubytování samozřejmě poskytujeme po celý rok.
                     <br />Průběžně aktualizováno.
