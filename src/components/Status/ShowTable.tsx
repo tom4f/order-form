@@ -50,7 +50,7 @@ export const ShowTable = ( {formResult}:formResultType) => {
 
         const allTr:JSX.Element[] = []
         if (!formResult?.length) return null
-        for (let week = firstWeekStart(0).actualWeek; week < firstWeekStart(0).actualWeek + formResult.length - 26; week++){
+        for (let week = firstWeekStart(0).actualWeek; week < firstWeekStart(0).actualWeek + formResult.length; week++){
             allTr.push( createTr(week) );
         }
 

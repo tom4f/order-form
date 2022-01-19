@@ -31,7 +31,7 @@ export const Status = () => {
           <div className="header" id="user-logged-in"><b>Aktuální obsazenost</b></div>
             <div className="booking_status">
                 <div className="form_result_alert edit_alert" id="form_edit_alert"></div>
-                    <ShowTable formResult={formResult} />
+                <ShowTable formResult={formResult} />
                 <div className="booking_info">
                     Poslední změna : { lastUpdate }
                     <span id="last_booking_update"></span>
