@@ -1,12 +1,16 @@
-/* formular.php */
-::-webkit-input-placeholder { /* Edge */
+::-webkit-input-placeholder { 
 	color: white;
+	background-color: transparent;
 }
-:-ms-input-placeholder { /* Internet Explorer */
+:placeholder-shown {
+	background-color: transparent;
+}
+:-ms-input-placeholder { 
 	color: white;
 }
 ::placeholder {
 	color: white;
+	background-color: transparent;
 }
 
 .form_booking{
@@ -54,7 +58,7 @@
 	border: none;
 	margin: 2px 5px;
 	transition: none;
-	color: white;
+	color: rgb(233, 233, 233);
 	letter-spacing: 0.1rem;
 }
 
@@ -102,6 +106,7 @@ http://stackoverflow.com/questions/26573346/ios-safari-messes-up-input-type-date
 
 .input_booking input[type="date"]
 {
+	background-color:rgba(0, 0, 0, 0.5);
     display:block;
   
     /* Solution 1 */

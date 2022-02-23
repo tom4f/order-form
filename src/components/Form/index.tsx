@@ -83,12 +83,12 @@ export const Form = () => {
 
                     <div className="input_booking">
                         <label>Datum příjezdu :</label><br />
-                        <input value={formData.datum_prijezdu} onChange={ (e) => setFormData( old => ({ ...old, datum_prijezdu: e.target.value }) ) } type="date" name="datum_prijezdu" placeholder="vyplňte datum příjezdu" required />
+                        <input value={formData.datum_prijezdu} onChange={ (e) => setFormData( old => ({ ...old, datum_prijezdu: e.target.value }) ) } type="date" name="datum_prijezdu" required />
                     </div>
 
                     <div className="input_booking">
                         <label>Datum odjezdu :</label><br />
-                        <input value={formData.datum_odjezdu} onChange={ (e) => setFormData( old => ({ ...old, datum_odjezdu: e.target.value }) ) } type="date" name="datum_odjezdu" placeholder="vyplňte datum odjezdu" required />
+                        <input value={formData.datum_odjezdu} onChange={ (e) => setFormData( old => ({ ...old, datum_odjezdu: e.target.value }) ) } type="date" name="datum_odjezdu" required />
                     </div>
 
                     <div className="input_booking">
